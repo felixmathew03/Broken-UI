@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="logo">Brew<span>Lab</span></a>
+      <ul class="nav-links">
+        <li><a href="#feature">Features</a></li>
+        <li><a href="#plans">Plans</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Small-batch &middot; Freshly roasted</p>
+          <h1>Coffee that shows up at your door, still warm from the roaster.</h1>
+          <p>BrewLab roasts in small batches every Monday and ships within 24 hours, so every cup tastes the way the farmer intended.</p>
+          <div class="hero-actions">
+            <a href="#plans" class="btn">See plans</a>
+            <a href="#features" class="btn btn-outline">How it works</a>
+          </div>
+        </div>
+        <img class="hero-img" src="image/cup.svg">
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <h4>Why people switch to BrewLab</h4>
+        <p class="section-sub">Three small promises we never break.</p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">&#9749;</div>
+            <h3>Roasted to order</h3>
+            <p>Beans are roasted the week they ship, never left sitting on a shelf.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">&#127793;</div>
+            <h3>Ethically sourced</h3>
+            <p>We pay farmers directly and publish every price we pay.</p>
+          <article class="card">
+            <div class="card-icon">&#128666;</div>
+            <h3>Flexible delivery</h3>
+            <p>Pause, skip or change your blend any time before the next roast.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TODO: build the "Plans" section here (see TASK.md) -->
+
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section-title">Talk to us</h2>
+        <p class="section-sub">Questions about blends, gifting or office plans? Drop us a line.</p>
+
+        <form class="contact-form" action="#">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" placeholder="Asha Menon" required>
+          </div>
+          <div class="field">
+            <label for="mail">Email</label>
+            <input type="text" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" placeholder="How can we help?"></textarea>
+          </div>
+          <button type="button" class="btn">Send message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 BrewLab. Roasted with care.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

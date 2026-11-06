@@ -1,0 +1,343 @@
+Only in student: TASK.md
+diff -ru organizer/solution/index.html student/index.html
+--- organizer/solution/index.html	2026-11-05 08:50:40.517767836 +0000
++++ student/index.html	2026-11-05 09:07:35.954307608 +0000
+@@ -1,9 +1,8 @@
+ <!DOCTYPE html>
+-<html lang="en">
++<html>
+ <head>
+   <meta charset="UTF-8">
+-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-  <title>BrewLab | Small-batch coffee, delivered</title>
++  <title>Document</title>
+   <link rel="stylesheet" href="styles.css">
+ </head>
+ <body>
+@@ -12,7 +11,7 @@
+     <div class="container nav">
+       <a href="#top" class="logo">Brew<span>Lab</span></a>
+       <ul class="nav-links">
+-        <li><a href="#features">Features</a></li>
++        <li><a href="#feature">Features</a></li>
+         <li><a href="#plans">Plans</a></li>
+         <li><a href="#contact">Contact</a></li>
+       </ul>
+@@ -32,13 +31,13 @@
+             <a href="#features" class="btn btn-outline">How it works</a>
+           </div>
+         </div>
+-        <img class="hero-img" src="images/cup.svg" alt="Illustration of a steaming cup of coffee on a saucer">
++        <img class="hero-img" src="image/cup.svg">
+       </div>
+     </section>
+ 
+     <section class="section" id="features">
+       <div class="container">
+-        <h2 class="section-title">Why people switch to BrewLab</h2>
++        <h4>Why people switch to BrewLab</h4>
+         <p class="section-sub">Three small promises we never break.</p>
+ 
+         <div class="cards">
+@@ -51,7 +50,6 @@
+             <div class="card-icon">&#127793;</div>
+             <h3>Ethically sourced</h3>
+             <p>We pay farmers directly and publish every price we pay.</p>
+-          </article>
+           <article class="card">
+             <div class="card-icon">&#128666;</div>
+             <h3>Flexible delivery</h3>
+@@ -61,55 +59,7 @@
+       </div>
+     </section>
+ 
+-    <!-- PLANS:START -->
+-    <section class="section section-alt" id="plans">
+-      <div class="container">
+-        <h2 class="section-title">Pick your plan</h2>
+-        <p class="section-sub">No contracts. Cancel or pause whenever you like.</p>
+-
+-        <div class="plans">
+-          <article class="plan">
+-            <h3>Starter</h3>
+-            <p class="plan-desc">For the occasional cup.</p>
+-            <p class="price">$12<small>/month</small></p>
+-            <ul>
+-              <li>1 bag (250 g) per month</li>
+-              <li>Choose any single-origin</li>
+-              <li>Free shipping over $10</li>
+-            </ul>
+-            <a href="#contact" class="btn">Choose Starter</a>
+-          </article>
+-
+-          <article class="plan featured">
+-            <span class="badge">Most popular</span>
+-            <h3>Daily</h3>
+-            <p class="plan-desc">For a proper morning ritual.</p>
+-            <p class="price">$24<small>/month</small></p>
+-            <ul>
+-              <li>2 bags (500 g) per month</li>
+-              <li>Mix any two blends</li>
+-              <li>Free shipping</li>
+-              <li>Skip a month anytime</li>
+-            </ul>
+-            <a href="#contact" class="btn">Choose Daily</a>
+-          </article>
+-
+-          <article class="plan">
+-            <h3>Office</h3>
+-            <p class="plan-desc">For the whole team.</p>
+-            <p class="price">$59<small>/month</small></p>
+-            <ul>
+-              <li>6 bags (1.5 kg) per month</li>
+-              <li>Grind set for your machine</li>
+-              <li>Free shipping</li>
+-              <li>Priority support</li>
+-            </ul>
+-            <a href="#contact" class="btn">Choose Office</a>
+-          </article>
+-        </div>
+-      </div>
+-    </section>
+-    <!-- PLANS:END -->
++    <!-- TODO: build the "Plans" section here (see TASK.md) -->
+ 
+     <section class="section" id="contact">
+       <div class="container">
+@@ -122,14 +72,14 @@
+             <input type="text" id="name" name="name" placeholder="Asha Menon" required>
+           </div>
+           <div class="field">
+-            <label for="email">Email</label>
+-            <input type="email" id="email" name="email" placeholder="you@example.com" required>
++            <label for="mail">Email</label>
++            <input type="text" id="email" name="email" placeholder="you@example.com" required>
+           </div>
+           <div class="field">
+             <label for="message">Message</label>
+-            <textarea id="message" name="message" rows="4" placeholder="How can we help?"></textarea>
++            <textarea id="message" rows="4" placeholder="How can we help?"></textarea>
+           </div>
+-          <button type="submit" class="btn">Send message</button>
++          <button type="button" class="btn">Send message</button>
+         </form>
+       </div>
+     </section>
+diff -ru organizer/solution/styles.css student/styles.css
+--- organizer/solution/styles.css	2026-11-05 08:50:55.141767501 +0000
++++ student/styles.css	2026-11-05 09:07:35.954349149 +0000
+@@ -1,5 +1,5 @@
+ /* ==========================================================
+-   BrewLab - reference solution
++   BrewLab - practice page
+    ========================================================== */
+ 
+ :root {
+@@ -17,7 +17,6 @@
+ }
+ 
+ * {
+-  box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+ }
+@@ -53,7 +52,6 @@
+ .site-header {
+   position: sticky;
+   top: 0;
+-  z-index: 10;
+   background: rgba(251, 246, 238, 0.96);
+   border-bottom: 1px solid var(--line);
+ }
+@@ -76,7 +74,7 @@
+ }
+ 
+ .nav-links {
+-  display: flex;
++  dispaly: flex;
+   gap: 28px;
+   list-style: none;
+ }
+@@ -109,7 +107,7 @@
+   transition: background 0.2s, border-color 0.2s, transform 0.2s;
+ }
+ 
+-.btn:hover {
++.btn:hovr {
+   background: var(--accent-dark);
+   border-color: var(--accent-dark);
+   transform: translateY(-2px);
+@@ -117,7 +115,7 @@
+ 
+ .btn-outline {
+   background: transparent;
+-  color: var(--cream);
++  color: var(--dark);
+   border-color: var(--cream);
+ }
+ 
+@@ -156,9 +154,9 @@
+ 
+ .hero h1 {
+   margin-bottom: 16px;
+-  color: #fff9ef;
++  color: #3d2a20;
+   font-family: Georgia, "Times New Roman", serif;
+-  font-size: clamp(2.2rem, 5vw, 3.4rem);
++  font-size: 4rem;
+   line-height: 1.12;
+ }
+ 
+@@ -180,8 +178,7 @@
+ }
+ 
+ .hero-img {
+-  width: 100%;
+-  max-width: 420px;
++  width: 420px;
+ }
+ 
+ /* ---------- Sections ---------- */
+@@ -203,7 +200,7 @@
+ 
+ .section-sub {
+   margin-bottom: 40px;
+-  color: var(--muted);
++  color: #d6cbbb;
+   text-align: center;
+ }
+ 
+@@ -211,8 +208,7 @@
+ 
+ .cards {
+   display: grid;
+-  grid-template-columns: repeat(3, 1fr);
+-  gap: 24px;
++  grid-template-columns: repeat(3 1fr);
+ }
+ 
+ .card {
+@@ -245,93 +241,6 @@
+   color: var(--muted);
+ }
+ 
+-/* PLANS:START */
+-/* ---------- Plans ---------- */
+-
+-.plans {
+-  display: grid;
+-  grid-template-columns: repeat(3, 1fr);
+-  gap: 24px;
+-  align-items: stretch;
+-}
+-
+-.plan {
+-  position: relative;
+-  display: flex;
+-  flex-direction: column;
+-  padding: 32px 28px;
+-  background: var(--card);
+-  border: 1px solid var(--line);
+-  border-radius: var(--radius);
+-}
+-
+-.plan h3 {
+-  font-family: Georgia, "Times New Roman", serif;
+-  font-size: 1.4rem;
+-}
+-
+-.plan-desc {
+-  color: var(--muted);
+-}
+-
+-.price {
+-  margin: 12px 0 4px;
+-  font-family: Georgia, "Times New Roman", serif;
+-  font-size: 2.6rem;
+-  line-height: 1.1;
+-}
+-
+-.price small {
+-  font-family: "Segoe UI", system-ui, sans-serif;
+-  font-size: 1rem;
+-  color: var(--muted);
+-}
+-
+-.plan ul {
+-  flex: 1;
+-  margin: 20px 0 28px;
+-  list-style: none;
+-}
+-
+-.plan li {
+-  padding: 8px 0;
+-  border-bottom: 1px dashed var(--line);
+-  color: var(--muted);
+-}
+-
+-.plan li::before {
+-  content: "\2713";
+-  margin-right: 10px;
+-  color: var(--accent);
+-  font-weight: 700;
+-}
+-
+-.plan .btn {
+-  text-align: center;
+-}
+-
+-.plan.featured {
+-  border: 2px solid var(--accent);
+-  box-shadow: 0 12px 28px rgba(184, 92, 44, 0.18);
+-}
+-
+-.badge {
+-  position: absolute;
+-  top: -14px;
+-  left: 50%;
+-  transform: translateX(-50%);
+-  padding: 4px 14px;
+-  border-radius: 999px;
+-  background: var(--accent);
+-  color: #ffffff;
+-  font-size: 0.75rem;
+-  font-weight: 700;
+-  letter-spacing: 0.08em;
+-  text-transform: uppercase;
+-  white-space: nowrap;
+-}
+-/* PLANS:END */
+-
+ /* ---------- Contact form ---------- */
+ 
+ .contact-form {
+@@ -373,8 +282,7 @@
+ 
+ .field input:focus,
+ .field textarea:focus {
+-  outline: 2px solid var(--accent);
+-  outline-offset: 1px;
++  outline: none;
+ }
+ 
+ .contact-form .btn {
+@@ -393,7 +301,7 @@
+ 
+ /* ---------- Responsive ---------- */
+ 
+-@media (max-width: 720px) {
++@media (max-width 720px) {
+   .nav-links {
+     gap: 16px;
+   }
+@@ -413,10 +321,6 @@
+     grid-template-columns: 1fr;
+   }
+ 
+-  .plans {
+-    grid-template-columns: 1fr;
+-  }
+-
+   .section {
+     padding: 52px 0;
+   }
